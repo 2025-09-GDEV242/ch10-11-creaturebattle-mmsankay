@@ -7,8 +7,8 @@
  * the creature is alive or knocked out. The creature is also responsible for calculating
  * damage delivered based on the creature's strength (1 to str) 
  * 
- * @author Crosbie
- * @version 2025-04 v1.0
+ * @author Marian M. Sankay
+ * @version 2025-24 v1.0
  */
 // we will learn what the abstract keyword does in a later chapter
 public abstract class Creature
@@ -40,7 +40,20 @@ public abstract class Creature
      */
     public int attack(){
         // TODO: implement a damage method
-        return 0;
+        int damageToReturn;
+        int totalDamage;
+        
+        totalDamage = super.attack();
+        
+        If (Randomizer.nextInt(10) == 10) {
+            totalDamage=totalDamage*2;
+        }
+        
+            return totalDamage;
+            
+        damageToReturn = Randomizer.nextInt(Str);
+        
+        return damageToReturn;
     }
     
     
@@ -49,8 +62,9 @@ public abstract class Creature
      * @return true when current hit point level is greater than zero
      */
     public boolean isAlive() {
-        // TODO: implement a method to report if the creature yet lives
-        return false; //change this
+        // TODO: implement a methodto report if the creature yet lives
+        
+        return (hp  >0); //change this
     }
     
     /**
@@ -59,7 +73,21 @@ public abstract class Creature
      */
     public boolean isKnockedOut() {
         //TODO: implement a method to report if the creature has been killed
-        return false; //change this
+        boolean stillConsious;
+        boolean stillunConsious;
+        return ! isAlive(); //change this
+        
+         if (hp<=0); {
+            unConsious = true;
+            
+            
+        }
+            else {
+                unConsious = false;
+                
+            }
+                return unConsious;
+        }
     }
     
     
@@ -70,6 +98,21 @@ public abstract class Creature
      */
     public void takeDamage(int damage) {
         // TODO: implement this
+        hp = hp - damage;
     }
     
+    
+    class Human extends creature
+    
+                               Max_ELF_HP = 25
+                               MIN_ELF_HP = 8
+                               
+                               
+    Randomizer.nextInt(MAX_ELF_MIN_ELF_STR)+MIN_ELF_STR
+    
+    Randomizer.nextInt(MAX_ELF_HP_MIN_ELF_HP)+MIN_ELF_HP
+    
+
+}
+
 }
